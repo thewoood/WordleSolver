@@ -1,0 +1,2 @@
+# WordleSolver
+It solves Wordle!
