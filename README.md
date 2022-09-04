@@ -115,7 +115,28 @@ Yes! Beacuse if we've enter E also as our last letter, then we've already found 
 
 So, now take a deep breath while we get back to our Main Qustion! 
 > (But why is that? We do we even bother checking the second statement?)
-Now suppose that the users tell us that the first e was gray. the typically what we would do is adding the letter e to the notLetters list. so the next time we filter our searchSpace, we'll omit all the words containing e. But wait! Doesn't this mean that we'll also omit the word alone (which is the correct answer) from our list? Well, yes! beacuse Alone has an E and we tell the programm to delete any word containing any number of E(s). 
+\n Now suppose that the users tell us that the first e was gray. the typically what we would do is adding the letter e to the notLetters list. so the next time we filter our searchSpace, we'll omit all the words containing e. But wait! Doesn't this mean that we'll also omit the word alone (which is the correct answer) from our list? Well, yes! beacuse Alone has an E and we tell the programm to delete any word containing any number of E(s). 
 So what should we do? It's when our mysterious STATEMENT comes in. It checks wether the gray letter was ever input as a sureLetter or not. If yes, we don't add the letter to the notLetters list, cause we don't want it to be removed. And if it was not a sureLetter, we simply add it to notLetters to get rid of it!
 
 
+```python
+        else:
+            unsureLetters.append(str(letter + str(index + 1)))
+
+    uniqueUnsureLetters = list(set(map(lambda x: x[0], unsureLetters)))
+```
+Nori will explain this!
+
+
+```python
+
+    return checker(
+        searchSpace,
+        sureLetters,
+        notLetters,
+        unsureLetters,
+        uniqueUnsureLetters,
+        results,
+    )
+```
+At last, we call checker to filter our searchSpace for the next round, based on the new information we recieved and stored.
