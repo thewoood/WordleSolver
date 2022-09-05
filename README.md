@@ -2,7 +2,7 @@
 #### Video Demo:  <URL HERE>
 #### Description:
 It solves Wordle!!!
-[![asciicast](https://asciinema.org/a/XvP6AknnpXQSoq0uKXw70ZzEB.svg)](https://asciinema.org/a/XvP6AknnpXQSoq0uKXw70ZzEB)
+<a href="https://asciinema.org/a/XvP6AknnpXQSoq0uKXw70ZzEB" target="_blank"><img src="https://asciinema.org/a/XvP6AknnpXQSoq0uKXw70ZzEB.svg" /></a>
 
 ### main()
 ```python
