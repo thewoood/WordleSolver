@@ -1,6 +1,8 @@
 # WordleSolver
+#### Video Demo:  <URL HERE>
+#### Description:
 It solves Wordle!!!
-
+[![asciicast](https://asciinema.org/a/XvP6AknnpXQSoq0uKXw70ZzEB.svg)](https://asciinema.org/a/XvP6AknnpXQSoq0uKXw70ZzEB)
 
 ### main()
 ```python
