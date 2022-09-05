@@ -3,11 +3,11 @@
 #### Description:
 It solves Wordle!!!
     
-#### Preview in asciinema
-<a href="https://asciinema.org/a/XvP6AknnpXQSoq0uKXw70ZzEB" target="_blank"><img src="https://asciinema.org/a/XvP6AknnpXQSoq0uKXw70ZzEB.svg" /></a>
-
 #### Preview in gif
 ![Alt Text](https://github.com/thewoood/WordleSolver/blob/main/wordle.gif?raw=true)
+
+#### Preview in asciinema
+<a href="https://asciinema.org/a/XvP6AknnpXQSoq0uKXw70ZzEB" target="_blank"><img src="https://asciinema.org/a/XvP6AknnpXQSoq0uKXw70ZzEB.svg" /></a>
 
 ### main()
 ```python
