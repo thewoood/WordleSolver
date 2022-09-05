@@ -140,3 +140,63 @@ Nori will explain this!
     )
 ```
 At last, we call checker to filter our searchSpace for the next round, based on the new information we recieved and stored.
+
+
+```python
+def checker(
+    searchSpace, sureLetters, notLetters, unsureLetters, uniqueUnsureLetters, results
+):
+    for word in searchSpace:
+        shouldContinue = True
+        for index, sureLetter in enumerate(sureLetters):
+            if shouldContinue == False:
+                break
+```
+Just starting to check each word in searchSpace. Then in the second loop, we start to itterate over each letter.
+
+```python 
+C_SureLetters = sureLetter != "" and word[index] != sureLetter
+```
+if the sureLetter is not empty and it's not already found, the C_SureLetters is True
+
+```python
+C_NotLetters = any(word[index] == notletter for notletter in notLetters)
+```
+if any of the notLetters entered by user is one of the letters of the word (the word = any word from searchSpace) then C_NotLetters is True
+
+```python
+C_UnsureLetters = any(
+            word[int(unsureLetter[1]) - 1] == unsureLetter[0]
+            for unsureLetter in unsureLetters
+            )
+```
+The format of unsureLetters was as follows: a1, e3, j5. Meaning we addressed each word by its position. So e3 means that we know there's an e but the third letter is not e. int(unsureLetter[1]) is getting that number (like 3 in e3), converting it to integer. int(unsureLetter[1]) - 1, makes it work in zero indexing format. At the end, if any of the letters in unsureLetters was used in any word, of course with the exact given position (like 3 in e3), then C_UnsureLetters is True
+
+```python
+C_OnlyUnsureLetters = not all(
+            uniqeUnsureLetter in word for uniqeUnsureLetter in uniqueUnsureLetters
+        )
+```
+
+if any of uniqeUnsureLetters was found in word, then C_OnlyUnsureLetters is True
+
+```python
+            if (
+                C_SureLetters
+                or C_NotLetters
+                or C_UnsureLetters
+                or C_OnlyUnsureLetters
+            ):
+                shouldContinue = False
+```
+
+if any of those C_somethings are correct, then we should not continue.
+
+```python
+if shouldContinue == True:
+            results.append(word)
+    searchSpace = results
+    return searchSpace
+```
+if we should continue, then we append that word to results, the set a new searchSpace based on those results, then return that searchSpace.
+DONE!
