@@ -120,23 +120,23 @@ So what should we do? It's when our mysterious STATEMENT comes in. It checks wet
 
 
 ```python
-        else:
-            unsureLetters.append(str(letter + str(index + 1)))
+    else:
+        unsureLetters.append(str(letter + str(index + 1)))
 
-    uniqueUnsureLetters = list(set(map(lambda x: x[0], unsureLetters)))
+uniqueUnsureLetters = list(set(map(lambda x: x[0], unsureLetters)))
 ```
 Nori will explain this!
 
 
 ```python
 
-    return checker(
-        searchSpace,
-        sureLetters,
-        notLetters,
-        unsureLetters,
-        uniqueUnsureLetters,
-        results,
+return checker(
+    searchSpace,
+    sureLetters,
+    notLetters,
+    unsureLetters,
+    uniqueUnsureLetters,
+    results,
     )
 ```
 At last, we call checker to filter our searchSpace for the next round, based on the new information we recieved and stored.
@@ -181,13 +181,13 @@ C_OnlyUnsureLetters = not all(
 if any of uniqeUnsureLetters was found in word, then C_OnlyUnsureLetters is True
 
 ```python
-            if (
-                C_SureLetters
-                or C_NotLetters
-                or C_UnsureLetters
-                or C_OnlyUnsureLetters
-            ):
-                shouldContinue = False
+if (
+    C_SureLetters
+    or C_NotLetters
+    or C_UnsureLetters
+    or C_OnlyUnsureLetters
+):
+    shouldContinue = False
 ```
 
 if any of those C_somethings are correct, then we should not continue.
